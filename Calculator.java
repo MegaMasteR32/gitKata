@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-class Сalculator {
-    public static void main(String[] args) throws Exception {
+class Calculator {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Введите выражение");
@@ -10,12 +10,12 @@ class Сalculator {
         }
     }
 
-    public static String calc(String input) throws Exception {
+    public static String calc(String input) {
         int num1, num2;
         String result;
         boolean isRoman;
         String[] operation = input.split("\s");
-        if (operation.length > 3) { //todo сделать на 3 элемента по пробел
+        if (operation.length > 3) {
             throw new RuntimeException("Формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         } else if (operation.length < 3) {
             throw new RuntimeException("Строка не является математической операцией");
@@ -47,23 +47,8 @@ class Сalculator {
         return result;
     }
 
-
-//    static String detectedOperation(String input) throws Exception {
-//        if (input.contains("+")) return "+";
-//        else if (input.contains("-")) return "-";
-//        else if (input.contains("*")) return "*";
-//        else if (input.contains("/")) return "/";
-//        else throw new Exception("Строка не является математической операцией");
-//
-//    }
-
     static int calcularion(int num1, int num2, String oper) {
-//        if (oper.equals("+")) return num1 + num2;
-//        else if (oper.equals("-")) return num1 - num2;
-//        else if (oper.equals("*")) return num1 * num2;
-//        else return num1/num2;
-
-        int z;
+        int z = 0;
         switch (oper) {
             case "+":
                 z = num1 + num2;
@@ -77,8 +62,6 @@ class Сalculator {
             case "*":
                 z = num1 * num2;
                 break;
-            default:
-                return z = Integer.parseInt(null);
         }
         return z;
     }
